@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { GeneralInfo, Education, Experience } from "./types/cv.ts";
+import GeneralInfoForm from "./components/forms/GeneralInfoForm.tsx";
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState<GeneralInfo>({
@@ -18,7 +19,7 @@ function App() {
         {/* LEFT COLUMN - FORMS */}
         <div className="space-y-6">
           <h2 className="text-xl font-bold">Editor</h2>
-
+          <GeneralInfoForm data={generalInfo} setData={setGeneralInfo} />
           {/* Aquí van tus Forms */}
           {/* <GeneralInfoForm /> */}
           {/* <EducationForm /> */}
