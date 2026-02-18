@@ -1,6 +1,24 @@
 import { useState } from "react";
 import type { GeneralInfo, Education, Experience } from "./types/cv.ts";
 import GeneralInfoForm from "./components/forms/GeneralInfoForm.tsx";
+import CvPreview from "./components/preview/CVPreview.tsx";
+import html2pdf from "html2pdf.js";
+
+function handleExportPDF() {
+  const element = document.getElementById("cv-preview");
+  if (!element) return;
+
+  html2pdf()
+    .set({
+      margin: 0,
+      filename: "cv.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    })
+    .from(element)
+    .save();
+}
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState<GeneralInfo>({
@@ -17,41 +35,27 @@ function App() {
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="grid grid-cols-2 gap-8">
         {/* LEFT COLUMN - FORMS */}
-        <div className="space-y-6">
+        <div className="">
           <h2 className="text-xl font-bold">Editor</h2>
           <GeneralInfoForm data={generalInfo} setData={setGeneralInfo} />
           {/* Aquí van tus Forms */}
           {/* <GeneralInfoForm /> */}
           {/* <EducationForm /> */}
           {/* <ExperienceForm /> */}
+          <button
+            onClick={handleExportPDF}
+            className="mb-4 bg-blue-600 text-white px-4 py-2 rounded"
+          >
+            Export to PDF
+          </button>
         </div>
 
         {/* RIGHT COLUMN - PREVIEW */}
-        <div id="cv-preview" className="bg-white min-h-275 shadow-lg p-10">
-          <h1 className="text-2xl font-bold">
-            {generalInfo.name || "Your Name"}
-          </h1>
-          <p>{generalInfo.email}</p>
-          <p>{generalInfo.phone}</p>
-          {/* Educations */}
-          {educations.map((edu) => (
-            <div key={edu.id} className="mt-4">
-              <h3 className="font-semibold">{edu.degree}</h3>
-              <p>{edu.school}</p>
-              <p>{edu.year}</p>
-            </div>
-          ))}
-          {/* Experiences */}
-          {experiences.map((exp) => (
-            <div key={exp.id} className="mt-4">
-              <h3 className="font-semibold">{exp.position}</h3>
-              <p>{exp.company}</p>
-              <p>
-                {exp.from} - {exp.to}
-              </p>
-            </div>
-          ))}{" "}
-        </div>
+        <CvPreview
+          generalInfo={generalInfo}
+          educations={educations}
+          experiences={experiences}
+        />
       </div>
     </div>
   );

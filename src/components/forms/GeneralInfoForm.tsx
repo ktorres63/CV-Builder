@@ -14,7 +14,6 @@ function GeneralInfoForm({ data, setData }: Props) {
 
   return (
     <div className="rounded-lg shadow">
-      <h2 className="text-lg font-bold mb-4">General Information</h2>
       <div className="flex flex-col gap-4">
         <Card>
           <FormInput<GeneralInfo>
