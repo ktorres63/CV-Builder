@@ -9,19 +9,31 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
   return (
     <div
       id="cv-preview"
-      className="bg-white p-10 flex flex-col w-[794px] min-h-[1123px]"
+      className="bg-white p-10 flex flex-col w-198 min-h-280"
     >
-      <div className="h-px bg-black "></div>
+      <div className="h-px bg-black mb-3 "></div>
       <h1 className="text-3xl self-center font-bold">
         {generalInfo.name ? generalInfo.name.toUpperCase() : "YOUR NAME"}
       </h1>
-      <div className="h-px bg-black mb-[3px] mt-[12px]"></div>
-      <div className="h-[3px] bg-black "></div>
-      <p>{generalInfo.email}</p>
-      <p>{generalInfo.phone}</p>
-      <p>{generalInfo.resume}</p>
+      <div className="h-px bg-black mb-0.75 mt-2"></div>
+      <div className="h-0.75 bg-black "></div>
+      <div className="mt-1.5 flex flex-row gap-3 justify-center text-sm">
+        <p>◆ {generalInfo.phone}</p>
+        <p>◆ {generalInfo.email}</p>
+      </div>
 
-      <h2 className="text-lg font-bold mt-8 mb-4">Education</h2>
+      <div className="flex flex-row  justify-center items-center mt-2.5">
+        <div className="h-px bg-black flex-1 "></div>
+        <h2 className="text-lg font-bold px-3 whitespace-nowrap">Resume</h2>
+        <div className="h-px bg-black flex-1"></div>
+      </div>
+      <p className="text-sm">{generalInfo.resume}</p>
+
+      <div className="flex flex-row  justify-center items-center mt-2.5">
+        <div className="h-px bg-black flex-1 "></div>
+        <h2 className="text-lg font-bold px-3 whitespace-nowrap">Education</h2>
+        <div className="h-px bg-black  flex-1"></div>
+      </div>
       {/*<div className="bg-green-300 shadow-md rounded p-4">
         {educations.map((item, index) => (
           <div key={index} className="mb-4">
@@ -34,7 +46,14 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
           </div>
         ))}
       </div>*/}
-      <h2 className="text-lg font-bold mt-8 mb-4">Experience</h2>
+
+      <div className="flex flex-row  justify-center items-center mt-2.5">
+        <div className="h-px bg-black  flex-1 "></div>
+        <h2 className="text-lg font-bold px-3 whitespace-nowrap ">
+          Experience
+        </h2>
+        <div className="h-px bg-black flex-1"></div>
+      </div>
       {/*<div className="bg-green-300 shadow-md rounded p-4">
         {experiences.map((item, index) => (
           <div key={index} className="mb-4">

@@ -18,7 +18,7 @@ function GeneralInfoForm({ data, setData }: Props) {
   return (
     <div className="rounded-lg shadow">
       <div className="flex flex-col gap-4">
-        <Card>
+        <Card title="General Information">
           <FormInput<GeneralInfo>
             type="text"
             label="Full Name"
@@ -56,7 +56,7 @@ function GeneralInfoForm({ data, setData }: Props) {
             value={data.resume}
             onChange={handleChange}
             className="border p-2 rounded"
-            maxLength={300}
+            maxLength={430}
             rows={4}
           />
         </Card>

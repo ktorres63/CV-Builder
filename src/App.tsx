@@ -1,29 +1,15 @@
 import { useState } from "react";
 import type { GeneralInfo, Education, Experience } from "./types/cv.ts";
 import GeneralInfoForm from "./components/forms/GeneralInfoForm.tsx";
-import CvPreview from "./components/preview/CVPreview.tsx";
-import html2pdf from "html2pdf.js";
-
-function handleExportPDF() {
-  const element = document.getElementById("cv-preview");
-  if (!element) return;
-
-  html2pdf()
-    .set({
-      margin: 0,
-      filename: "cv.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "px", format: [764, 1123], orientation: "portrait" },
-    })
-    .from(element)
-    .save();
-}
+import EducationForm from "./components/forms/EducationForm.tsx";
+import CvPreview from "./components/pdf/CVPreview.tsx";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import CvDocument from "./components/pdf/cvDocument.tsx";
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState<GeneralInfo>({
     name: "John Doe",
-    email: "jhon@gmail.com",
+    email: "john@gmail.com",
     phone: "989919299",
     resume: "",
   });
@@ -37,18 +23,27 @@ function App() {
       <h1 className="text-3xl font-bold self-center mb-4">CV-Builder</h1>
       <div className="flex gap-8 justify-center">
         {/* LEFT COLUMN - FORMS */}
-        <div className="min-w-96">
+        <div className="min-w-96 flex flex-col gap-5">
           <GeneralInfoForm data={generalInfo} setData={setGeneralInfo} />
+          <EducationForm data={educations} setData={setEducations} />
+
           {/* Aquí van tus Forms */}
           {/* <GeneralInfoForm /> */}
           {/* <EducationForm /> */}
           {/* <ExperienceForm /> */}
-          <button
-            onClick={handleExportPDF}
-            className="mb-4 bg-blue-600 text-white px-4 py-2 rounded"
+          <PDFDownloadLink
+            document={
+              <CvDocument
+                generalInfo={generalInfo}
+                educations={educations}
+                experiences={experiences}
+              />
+            }
+            fileName="cv.pdf"
+            className="mb-4 bg-blue-600 text-white px-4 py-2 rounded inline-block"
           >
-            Export to PDF
-          </button>
+            {({ loading }) => (loading ? "Generating PDF..." : "Export to PDF")}
+          </PDFDownloadLink>
         </div>
 
         {/* RIGHT COLUMN - PREVIEW */}
