@@ -14,7 +14,7 @@ function handleExportPDF() {
       filename: "cv.pdf",
       image: { type: "jpeg", quality: 0.98 },
       html2canvas: { scale: 2 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      jsPDF: { unit: "px", format: [764, 1123], orientation: "portrait" },
     })
     .from(element)
     .save();
@@ -25,6 +25,7 @@ function App() {
     name: "John Doe",
     email: "jhon@gmail.com",
     phone: "989919299",
+    resume: "",
   });
 
   const [educations, setEducations] = useState<Education[]>([]);
@@ -32,11 +33,11 @@ function App() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="grid grid-cols-2 gap-8">
+    <div className="font-sans min-h-screen bg-gray-400 p-8 flex flex-col">
+      <h1 className="text-3xl font-bold self-center mb-4">CV-Builder</h1>
+      <div className="flex gap-8 justify-center">
         {/* LEFT COLUMN - FORMS */}
-        <div className="">
-          <h2 className="text-xl font-bold">Editor</h2>
+        <div className="min-w-96">
           <GeneralInfoForm data={generalInfo} setData={setGeneralInfo} />
           {/* Aquí van tus Forms */}
           {/* <GeneralInfoForm /> */}
@@ -51,11 +52,13 @@ function App() {
         </div>
 
         {/* RIGHT COLUMN - PREVIEW */}
-        <CvPreview
-          generalInfo={generalInfo}
-          educations={educations}
-          experiences={experiences}
-        />
+        <div className="flex justify-center">
+          <CvPreview
+            generalInfo={generalInfo}
+            educations={educations}
+            experiences={experiences}
+          />
+        </div>
       </div>
     </div>
   );

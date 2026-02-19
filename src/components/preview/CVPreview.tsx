@@ -7,10 +7,20 @@ type Props = {
 };
 function CvPreview({ generalInfo, educations, experiences }: Props) {
   return (
-    <div id="cv-preview" className="bg-white rounded-lg shadow-md p-4">
-      <h1 className="text-2xl font-bold">{generalInfo.name || "Your Name"}</h1>
+    <div
+      id="cv-preview"
+      className="bg-white p-10 flex flex-col w-[794px] min-h-[1123px]"
+    >
+      <div className="h-px bg-black "></div>
+      <h1 className="text-3xl self-center font-bold">
+        {generalInfo.name ? generalInfo.name.toUpperCase() : "YOUR NAME"}
+      </h1>
+      <div className="h-px bg-black mb-[3px] mt-[12px]"></div>
+      <div className="h-[3px] bg-black "></div>
       <p>{generalInfo.email}</p>
       <p>{generalInfo.phone}</p>
+      <p>{generalInfo.resume}</p>
+
       <h2 className="text-lg font-bold mt-8 mb-4">Education</h2>
       {/*<div className="bg-green-300 shadow-md rounded p-4">
         {educations.map((item, index) => (

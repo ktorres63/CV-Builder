@@ -2,6 +2,7 @@ export type GeneralInfo = {
   name: string;
   email: string;
   phone: string;
+  resume: string;
 };
 
 export type Education = {

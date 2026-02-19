@@ -1,16 +1,15 @@
 type Props<T> = {
-  type?: string;
   label: string;
   name: keyof T;
   placeholder?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   className?: string;
   maxLength?: number;
+  rows?: number;
 };
 
-function FormInput<T>({
-  type = "text",
+function FormTextArea<T>({
   label,
   name,
   placeholder,
@@ -18,22 +17,23 @@ function FormInput<T>({
   onChange,
   className,
   maxLength,
+  rows = 4,
 }: Props<T>) {
   return (
     <div className="flex flex-col gap-1">
       <label className="text-sm font-medium">{label}</label>
 
-      <input
-        type={type}
+      <textarea
         name={String(name)}
         value={value}
         placeholder={placeholder}
         onChange={onChange}
         className={`border p-2 rounded ${className}`}
         maxLength={maxLength}
+        rows={rows}
       />
     </div>
   );
 }
 
-export default FormInput;
+export default FormTextArea;
