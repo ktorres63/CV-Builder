@@ -9,7 +9,9 @@ export type Education = {
   id: string;
   school: string;
   degree: string;
-  year: string;
+  startDate: string;
+  endDate: string;
+  location: string;
 };
 
 export type Experience = {

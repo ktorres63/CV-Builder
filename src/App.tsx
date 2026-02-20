@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { GeneralInfo, Education, Experience } from "./types/cv.ts";
-import GeneralInfoForm from "./components/forms/GeneralInfoForm.tsx";
-import EducationForm from "./components/forms/EducationForm.tsx";
+import GeneralInfoSection from "./components/sections/GeneralInfoSection.tsx";
+import EducationSection from "./components/sections/EducationSection.tsx";
 import CvPreview from "./components/pdf/CVPreview.tsx";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import CvDocument from "./components/pdf/cvDocument.tsx";
@@ -11,10 +11,28 @@ function App() {
     name: "John Doe",
     email: "john@gmail.com",
     phone: "989919299",
-    resume: "",
+    resume:
+      "Lorem ipsum,corruptiesciunt, nemo nihil. Autem neque exercitationem distinctio labore porro tenetur, quam iure quaerat asperiores veritatis dolor accusamus blanditiis rem esse atque enim, eligendi voluptatum impedit quae maiores! Quae repellat a incidunt sapiente reiciendis! Praesentium officiis fugit, ea, dolorum",
   });
 
-  const [educations, setEducations] = useState<Education[]>([]);
+  const [educations, setEducation] = useState<Education[]>([
+    {
+      id: "1",
+      school: "University of Example",
+      degree: "Bachelor of Science",
+      startDate: "2000",
+      endDate: "2019",
+      location: "City, Country",
+    },
+    {
+      id: "2",
+      school: "University of Example",
+      degree: "Bachelor of Science",
+      startDate: "2000",
+      endDate: "2019",
+      location: "City, Country",
+    },
+  ]);
 
   const [experiences, setExperiences] = useState<Experience[]>([]);
 
@@ -24,12 +42,16 @@ function App() {
       <div className="flex gap-8 justify-center">
         {/* LEFT COLUMN - FORMS */}
         <div className="min-w-96 flex flex-col gap-5">
-          <GeneralInfoForm data={generalInfo} setData={setGeneralInfo} />
-          <EducationForm data={educations} setData={setEducations} />
+          <GeneralInfoSection data={generalInfo} setData={setGeneralInfo} />
+
+          <EducationSection
+            educations={educations}
+            setEducations={setEducation}
+          />
 
           {/* Aquí van tus Forms */}
-          {/* <GeneralInfoForm /> */}
-          {/* <EducationForm /> */}
+          {/* <GeneralInfoSection /> */}
+          {/* <EducationSection /> */}
           {/* <ExperienceForm /> */}
           <PDFDownloadLink
             document={

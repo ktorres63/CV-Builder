@@ -7,7 +7,7 @@ type Props = {
   data: GeneralInfo;
   setData: React.Dispatch<React.SetStateAction<GeneralInfo>>;
 };
-function GeneralInfoForm({ data, setData }: Props) {
+function GeneralInfoSection({ data, setData }: Props) {
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
@@ -64,4 +64,4 @@ function GeneralInfoForm({ data, setData }: Props) {
     </div>
   );
 }
-export default GeneralInfoForm;
+export default GeneralInfoSection;
