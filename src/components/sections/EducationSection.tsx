@@ -1,6 +1,5 @@
 import type { Education } from "../../types/cv";
-import CollapsibleCard from "../ui/DynamicSection";
-import FormInput from "../ui/FormInput";
+
 import Card from "../ui/Card";
 import EducationCard from "../ui/EducationCard";
 type Props = {

@@ -1,37 +1,31 @@
 import { useState } from "react";
 import type { Education } from "../../types/cv";
-// import EducationForm from "../forms/EducationForm";
+import EducationForm from "../forms/EducationForm";
 
 type Props = {
-  data: Education;
+  education: Education;
   index: number;
   setEducations: React.Dispatch<React.SetStateAction<Education[]>>;
 };
 
-function EducationCard({ data, index, setEducations }: Props) {
+function EducationCard({ education, setEducations }: Props) {
   const [isEditing, setIsEditing] = useState(false);
 
   function handleDelete() {
-    setEducations((prev) => prev.filter((_, i) => i !== index));
+    setEducations((prev) => prev.filter((edu) => edu.id !== education.id));
   }
 
   return (
     <div className="border rounded-lg p-4 bg-white shadow-sm mb-3">
       {!isEditing ? (
-        // =======================
-        // VIEW MODE
-        // =======================
         <>
           <div className="flex justify-between items-start">
             <div>
               <h3 className="font-semibold text-lg">
-                {data.school || "Untitled Education"}
+                {education.school || "Untitled Education"}
               </h3>
-              <p className="text-sm text-gray-700">{data.degree}</p>
-              <p className="text-sm text-gray-500">
-                {data.startDate} - {data.endDate}
-              </p>
-              <p className="text-sm text-gray-500">{data.location}</p>
+
+              <p className="text-sm text-gray-500">{education.location}</p>
             </div>
 
             <div className="flex gap-2">
@@ -52,15 +46,8 @@ function EducationCard({ data, index, setEducations }: Props) {
           </div>
         </>
       ) : (
-        // =======================
-        // EDIT MODE
-        // =======================
         <>
-          {/*<EducationForm
-            data={data}
-            index={index}
-            setEducations={setEducations}
-          />*/}
+          <EducationForm education={education} setEducations={setEducations} />
 
           <div className="flex justify-end gap-2 mt-3">
             <button
