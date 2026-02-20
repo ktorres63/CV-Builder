@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { Education } from "../../types/cv";
 import EducationForm from "../forms/EducationForm";
+import EditIcon from "../icons/EditIcon";
+import DeleteIcon from "../icons/DeleteIcon";
 
 type Props = {
   education: Education;
@@ -33,21 +35,21 @@ function EducationCard({ education, setEducations }: Props) {
                 onClick={() => setIsEditing(true)}
                 className="bg-yellow-400 px-2 py-1 rounded text-sm"
               >
-                Edit
+                <EditIcon className="w-5 h-5" />
               </button>
 
               <button
                 onClick={handleDelete}
                 className="bg-red-500 text-white px-2 py-1 rounded text-sm"
               >
-                Delete
+                <DeleteIcon className="w-5 h-5" />
               </button>
             </div>
           </div>
         </>
       ) : (
         <>
-          <EducationForm education={education} setEducations={setEducations} />
+          <EducationForm data={education} setEducations={setEducations} />
 
           <div className="flex justify-end gap-2 mt-3">
             <button

@@ -21,31 +21,34 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
         <p>◆ {generalInfo.phone}</p>
         <p>◆ {generalInfo.email}</p>
       </div>
-
       <div className="flex flex-row  justify-center items-center mt-2.5">
         <div className="h-px bg-black flex-1 "></div>
         <h2 className="text-lg font-bold px-3 whitespace-nowrap">Resume</h2>
         <div className="h-px bg-black flex-1"></div>
       </div>
       <p className="text-sm">{generalInfo.resume}</p>
-
       <div className="flex flex-row  justify-center items-center mt-2.5">
         <div className="h-px bg-black flex-1 "></div>
         <h2 className="text-lg font-bold px-3 whitespace-nowrap">Education</h2>
         <div className="h-px bg-black  flex-1"></div>
       </div>
-      {/*<div className="bg-green-300 shadow-md rounded p-4">
-        {educations.map((item, index) => (
-          <div key={index} className="mb-4">
-            <h3 className="text-base font-bold mb-2">{item.institution}</h3>
-            <p className="text-sm">{item.degree}</p>
-            <p className="text-sm">{item.fieldOfStudy}</p>
-            <p className="text-sm">
-              {item.startDate} - {item.endDate}
-            </p>
+
+      {educations.map((item, index) => (
+        <div key={index} className="mb-4">
+          <div className="flex items-center gap-4">
+            <div className="flex flex-col">
+              <p className="text-sm">
+                {item.startDate} - {item.endDate}
+              </p>
+              <p className="text-sm">{item.location}</p>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-base font-bold ">{item.school}</p>
+              <p className="text-sm">{item.degree}</p>
+            </div>
           </div>
-        ))}
-      </div>*/}
+        </div>
+      ))}
 
       <div className="flex flex-row  justify-center items-center mt-2.5">
         <div className="h-px bg-black  flex-1 "></div>

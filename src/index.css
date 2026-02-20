@@ -1,4 +1,72 @@
 @import "tailwindcss";
 @theme {
   --font-sans: monospace, ui-sans-serif, system-ui, sans-serif;
+  --color-primary-600: #2563eb;
+  --color-primary-500: #3b82f6;
+  --color-primary-100: #dbeafe;
+  --color-success: #16a34a;
+  --color-edit: #f59e0b;
+  --color-delete: #dc2626;
+  --color-background-app: #e6dfb3;
+  --color-background-card: #c0d8cc;
+
+  --color-eggshell-50: #f9f7ec;
+  --color-eggshell-100: #f2efd9;
+  --color-eggshell-200: #e6dfb3;
+  --color-eggshell-300: #d9cf8c;
+  --color-eggshell-400: #ccbe66;
+  --color-eggshell-500: #bfae40;
+  --color-eggshell-600: #998b33;
+  --color-eggshell-700: #736926;
+  --color-eggshell-800: #4d4619;
+  --color-eggshell-900: #26230d;
+  --color-eggshell-950: #1b1809;
+
+  --color-burnt-peach-50: #fbedea;
+  --color-burnt-peach-100: #f7dcd4;
+  --color-burnt-peach-200: #efb8a9;
+  --color-burnt-peach-300: #e7957e;
+  --color-burnt-peach-400: #de7254;
+  --color-burnt-peach-500: #d64e29;
+  --color-burnt-peach-600: #ab3f21;
+  --color-burnt-peach-700: #812f18;
+  --color-burnt-peach-800: #561f10;
+  --color-burnt-peach-900: #2b1008;
+  --color-burnt-peach-950: #1e0b06;
+
+  --color-twilight-indigo-50: #f0f0f5;
+  --color-twilight-indigo-100: #e0e1eb;
+  --color-twilight-indigo-200: #c2c4d6;
+  --color-twilight-indigo-300: #a3a6c2;
+  --color-twilight-indigo-400: #8589ad;
+  --color-twilight-indigo-500: #666b99;
+  --color-twilight-indigo-600: #52567a;
+  --color-twilight-indigo-700: #3d405c;
+  --color-twilight-indigo-800: #292b3d;
+  --color-twilight-indigo-900: #14151f;
+  --color-twilight-indigo-950: #0e0f15;
+
+  --color-muted-teal-50: #eff5f2;
+  --color-muted-teal-100: #dfece6;
+  --color-muted-teal-200: #c0d8cc;
+  --color-muted-teal-300: #a0c5b3;
+  --color-muted-teal-400: #81b19a;
+  --color-muted-teal-500: #619e81;
+  --color-muted-teal-600: #4e7e67;
+  --color-muted-teal-700: #3a5f4d;
+  --color-muted-teal-800: #273f33;
+  --color-muted-teal-900: #13201a;
+  --color-muted-teal-950: #0e1612;
+
+  --color-apricot-cream-50: #fcf5e8;
+  --color-apricot-cream-100: #faead1;
+  --color-apricot-cream-200: #f4d5a4;
+  --color-apricot-cream-300: #efc176;
+  --color-apricot-cream-400: #eaac48;
+  --color-apricot-cream-500: #e4971b;
+  --color-apricot-cream-600: #b77915;
+  --color-apricot-cream-700: #895b10;
+  --color-apricot-cream-800: #5b3c0b;
+  --color-apricot-cream-900: #2e1e05;
+  --color-apricot-cream-950: #201504;
 }

@@ -37,7 +37,7 @@ function EducationSection({ educations, setEducations }: Props) {
       {educations.map((edu, index) => (
         <EducationCard
           key={edu.id}
-          data={edu}
+          education={edu}
           index={index}
           setEducations={setEducations}
         />

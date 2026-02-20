@@ -37,7 +37,7 @@ function App() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
 
   return (
-    <div className="font-sans min-h-screen bg-gray-400 p-8 flex flex-col">
+    <div className="font-sans min-h-screen bg-background-app p-8 flex flex-col">
       <h1 className="text-3xl font-bold self-center mb-4">CV-Builder</h1>
       <div className="flex gap-8 justify-center">
         {/* LEFT COLUMN - FORMS */}
@@ -49,9 +49,6 @@ function App() {
             setEducations={setEducation}
           />
 
-          {/* Aquí van tus Forms */}
-          {/* <GeneralInfoSection /> */}
-          {/* <EducationSection /> */}
           {/* <ExperienceForm /> */}
           <PDFDownloadLink
             document={

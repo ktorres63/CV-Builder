@@ -23,7 +23,7 @@ function GeneralInfoSection({ data, setData }: Props) {
             type="text"
             label="Full Name"
             name="name"
-            placeholder="Full Name"
+            placeholder="John Doe"
             value={data.name}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -33,7 +33,7 @@ function GeneralInfoSection({ data, setData }: Props) {
             type="email"
             label="Email"
             name="email"
-            placeholder="Email"
+            placeholder="example@gmail.com"
             value={data.email}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -43,7 +43,7 @@ function GeneralInfoSection({ data, setData }: Props) {
             type="tel"
             label="Phone"
             name="phone"
-            placeholder="Phone"
+            placeholder="912345678"
             value={data.phone}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -52,7 +52,7 @@ function GeneralInfoSection({ data, setData }: Props) {
           <FormTextArea<GeneralInfo>
             label="Resume"
             name="resume"
-            placeholder="Resume"
+            placeholder="Software Engineer ...."
             value={data.resume}
             onChange={handleChange}
             className="border p-2 rounded"

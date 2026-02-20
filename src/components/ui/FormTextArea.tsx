@@ -21,7 +21,7 @@ function FormTextArea<T>({
 }: Props<T>) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-sm font-medium">{label}</label>
+      <label className="text-sm font-bold">{label}</label>
 
       <textarea
         name={String(name)}
