@@ -37,7 +37,7 @@ function App() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
 
   return (
-    <div className="font-sans min-h-screen bg-background-app p-8 flex flex-col">
+    <div className="font-sans min-h-screen bg-apricot-cream-200 p-8 flex flex-col">
       <h1 className="text-3xl font-bold self-center mb-4">CV-Builder</h1>
       <div className="flex gap-8 justify-center">
         {/* LEFT COLUMN - FORMS */}
@@ -59,7 +59,7 @@ function App() {
               />
             }
             fileName="cv.pdf"
-            className="mb-4 bg-blue-600 text-white px-4 py-2 rounded inline-block"
+            className="mb-4 bg-twilight-indigo-800 text-white px-4 py-2 rounded inline-block"
           >
             {({ loading }) => (loading ? "Generating PDF..." : "Export to PDF")}
           </PDFDownloadLink>

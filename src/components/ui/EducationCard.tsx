@@ -18,7 +18,7 @@ function EducationCard({ education, setEducations }: Props) {
   }
 
   return (
-    <div className="border rounded-lg p-4 bg-white shadow-sm mb-3">
+    <div className=" rounded-lg p-4 bg-muted-teal-200 shadow-sm mb-3">
       {!isEditing ? (
         <>
           <div className="flex justify-between items-start">
@@ -33,14 +33,14 @@ function EducationCard({ education, setEducations }: Props) {
             <div className="flex gap-2">
               <button
                 onClick={() => setIsEditing(true)}
-                className="bg-yellow-400 px-2 py-1 rounded text-sm"
+                className="border px-2 py-1 rounded text-sm"
               >
                 <EditIcon className="w-5 h-5" />
               </button>
 
               <button
                 onClick={handleDelete}
-                className="bg-red-500 text-white px-2 py-1 rounded text-sm"
+                className="border px-2 py-1 rounded text-sm"
               >
                 <DeleteIcon className="w-5 h-5" />
               </button>
@@ -54,14 +54,14 @@ function EducationCard({ education, setEducations }: Props) {
           <div className="flex justify-end gap-2 mt-3">
             <button
               onClick={() => setIsEditing(false)}
-              className="bg-gray-300 px-3 py-1 rounded"
+              className="bg-burnt-peach-700 px-3 py-1 rounded text-white"
             >
               Cancel
             </button>
 
             <button
               onClick={() => setIsEditing(false)}
-              className="bg-green-500 text-white px-3 py-1 rounded"
+              className="bg-twilight-indigo-800 text-white px-3 py-1 rounded"
             >
               Save
             </button>

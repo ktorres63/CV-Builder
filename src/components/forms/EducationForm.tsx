@@ -26,6 +26,7 @@ function EducationForm({ data, setEducations }: Props) {
         placeholder="Harvard University"
         value={data.school}
         onChange={handleChange}
+        maxLength={30}
       />
 
       <FormInput<Education>
@@ -35,6 +36,7 @@ function EducationForm({ data, setEducations }: Props) {
         placeholder="Bachelor of Computer Science"
         value={data.degree}
         onChange={handleChange}
+        maxLength={40}
       />
 
       <FormInput<Education>
@@ -44,6 +46,7 @@ function EducationForm({ data, setEducations }: Props) {
         placeholder="2020"
         value={data.startDate}
         onChange={handleChange}
+        maxLength={10}
       />
 
       <FormInput<Education>
@@ -53,6 +56,7 @@ function EducationForm({ data, setEducations }: Props) {
         placeholder="2024"
         value={data.endDate}
         onChange={handleChange}
+        maxLength={10}
       />
 
       <FormInput<Education>
@@ -62,6 +66,7 @@ function EducationForm({ data, setEducations }: Props) {
         placeholder="Boston, MA"
         value={data.location}
         onChange={handleChange}
+        maxLength={30}
       />
     </div>
   );

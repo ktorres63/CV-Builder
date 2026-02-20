@@ -16,12 +16,12 @@ function Card({
 }: Props) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   return (
-    <div className="bg-background-card shadow-md rounded-xl p-4 ">
+    <div className="bg-muted-teal-400 shadow-md rounded-xl p-4 border">
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-bold">{title}</h2>
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="bg-background-card px-2 py-1 rounded"
+          className="bg-muted-teal-400 px-2 py-1 rounded"
         >
           {isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
         </button>

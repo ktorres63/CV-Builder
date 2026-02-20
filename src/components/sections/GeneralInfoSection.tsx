@@ -26,7 +26,7 @@ function GeneralInfoSection({ data, setData }: Props) {
             placeholder="John Doe"
             value={data.name}
             onChange={handleChange}
-            className="border p-2 rounded"
+            className="border p-2 rounded bg-muted-teal-200 mb-3"
             maxLength={30}
           />
           <FormInput<GeneralInfo>
@@ -36,7 +36,7 @@ function GeneralInfoSection({ data, setData }: Props) {
             placeholder="example@gmail.com"
             value={data.email}
             onChange={handleChange}
-            className="border p-2 rounded"
+            className="border p-2 rounded bg-muted-teal-200 mb-3"
             maxLength={25}
           />
           <FormInput<GeneralInfo>
@@ -46,7 +46,7 @@ function GeneralInfoSection({ data, setData }: Props) {
             placeholder="912345678"
             value={data.phone}
             onChange={handleChange}
-            className="border p-2 rounded"
+            className="border p-2 rounded bg-muted-teal-200 mb-3"
             maxLength={10}
           />
           <FormTextArea<GeneralInfo>
@@ -55,9 +55,9 @@ function GeneralInfoSection({ data, setData }: Props) {
             placeholder="Software Engineer ...."
             value={data.resume}
             onChange={handleChange}
-            className="border p-2 rounded"
+            className="border p-2 rounded bg-muted-teal-200 mb-3"
             maxLength={430}
-            rows={4}
+            rows={6}
           />
         </Card>
       </div>

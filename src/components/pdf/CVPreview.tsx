@@ -35,16 +35,16 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
 
       {educations.map((item, index) => (
         <div key={index} className="mb-4">
-          <div className="flex items-center gap-4">
-            <div className="flex flex-col">
-              <p className="text-sm">
-                {item.startDate} - {item.endDate}
-              </p>
-              <p className="text-sm">{item.location}</p>
-            </div>
+          <div className="flex items-center gap-20 justify-between">
             <div className="flex flex-col">
               <p className="text-base font-bold ">{item.school}</p>
               <p className="text-sm">{item.degree}</p>
+            </div>
+            <div className="flex flex-col ">
+              <p className="text-sm">{item.location}</p>
+              <p className="text-sm">
+                {item.startDate} - {item.endDate}
+              </p>
             </div>
           </div>
         </div>
