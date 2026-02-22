@@ -9,7 +9,7 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
   return (
     <div
       id="cv-preview"
-      className="bg-white p-10 flex flex-col w-198 min-h-280"
+      className="bg-white p-10 flex flex-col w-198 min-h-280 border"
     >
       <div className="h-px bg-black mb-3 "></div>
       <h1 className="text-3xl self-center font-bold">
@@ -57,18 +57,18 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
         </h2>
         <div className="h-px bg-black flex-1"></div>
       </div>
-      {/*<div className="bg-green-300 shadow-md rounded p-4">
+      <div className="flex flex-row   items-center mt-2.5">
         {experiences.map((item, index) => (
           <div key={index} className="mb-4">
-            <h3 className="text-base font-bold mb-2">{item.company}</h3>
-            <p className="text-sm">{item.position}</p>
+            <p className="font-bold text-sm">{item.position}</p>
+            <h3 className="text-base  mb-2">{item.company}</h3>
             <p className="text-sm">
               {item.startDate} - {item.endDate}
             </p>
-            <p className="text-sm">{item.description}</p>
+            <p className="text-sm">{item.resume}</p>
           </div>
         ))}
-      </div>*/}
+      </div>
     </div>
   );
 }
