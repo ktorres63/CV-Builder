@@ -25,7 +25,7 @@ function ExperienceSection({ experiences, setExperiences }: Props) {
       headerAction={
         <button
           onClick={handleAdd}
-          className="bg-blue-500 text-white px-3 py-1 rounded self-center"
+          className="bg-twilight-indigo-800 text-white px-3 py-1 rounded self-center"
         >
           Add
         </button>

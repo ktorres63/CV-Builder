@@ -82,7 +82,7 @@ function App() {
               />
             }
             fileName="cv.pdf"
-            className="mb-4 bg-twilight-indigo-800 text-white px-4 py-2 rounded inline-block"
+            className="mb-4 bg-twilight-indigo-800 text-white px-4 py-2 rounded-xl flex justify-center"
           >
             {({ loading }) => (loading ? "Generating PDF..." : "Export to PDF")}
           </PDFDownloadLink>

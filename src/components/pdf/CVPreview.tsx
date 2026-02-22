@@ -26,7 +26,7 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
         <h2 className="text-lg font-bold px-3 whitespace-nowrap">Resume</h2>
         <div className="h-px bg-black flex-1"></div>
       </div>
-      <p className="text-sm">{generalInfo.resume}</p>
+      <p className="text-sm pt-2">{generalInfo.resume}</p>
       <div className="flex flex-row  justify-center items-center mt-2.5">
         <div className="h-px bg-black flex-1 "></div>
         <h2 className="text-lg font-bold px-3 whitespace-nowrap">Education</h2>
@@ -37,8 +37,8 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
         <div key={index} className="mb-4">
           <div className="flex items-center gap-20 justify-between">
             <div className="flex flex-col">
-              <p className="text-base font-bold ">{item.school}</p>
-              <p className="text-sm">{item.degree}</p>
+              <p className="text-base font-bold ">{item.degree}</p>
+              <p className="text-sm">{item.school}</p>
             </div>
             <div className="flex flex-col ">
               <p className="text-sm">{item.location}</p>
@@ -57,15 +57,15 @@ function CvPreview({ generalInfo, educations, experiences }: Props) {
         </h2>
         <div className="h-px bg-black flex-1"></div>
       </div>
-      <div className="flex flex-row   items-center mt-2.5">
+      <div className="flex flex-col   items-center mt-2.5">
         {experiences.map((item, index) => (
           <div key={index} className="mb-4">
             <p className="font-bold text-sm">{item.position}</p>
-            <h3 className="text-base  mb-2">{item.company}</h3>
+            <h3 className="text-sm">{item.company}</h3>
             <p className="text-sm">
               {item.startDate} - {item.endDate}
             </p>
-            <p className="text-sm">{item.resume}</p>
+            <p className="text-base mt-3">{item.resume}</p>
           </div>
         ))}
       </div>
