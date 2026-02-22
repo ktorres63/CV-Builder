@@ -5,6 +5,7 @@ import EducationSection from "./components/sections/EducationSection.tsx";
 import CvPreview from "./components/pdf/CVPreview.tsx";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import CvDocument from "./components/pdf/cvDocument.tsx";
+import ExperienceSection from "./components/sections/ExperienceSection.tsx";
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState<GeneralInfo>({
@@ -49,7 +50,10 @@ function App() {
             setEducations={setEducation}
           />
 
-          {/* <ExperienceForm /> */}
+          <ExperienceSection
+            experiences={experiences}
+            setExperiences={setExperiences}
+          />
           <PDFDownloadLink
             document={
               <CvDocument

@@ -1,70 +1,80 @@
-import type { Education } from "../../types/cv";
+import type { Experience } from "../../types/cv";
 import FormInput from "../ui/FormInput";
+import FormTextArea from "../ui/FormTextArea";
 
 type Props = {
-  data: Education;
-  setEducations: React.Dispatch<React.SetStateAction<Education[]>>;
+  data: Experience;
+  setExperiences: React.Dispatch<React.SetStateAction<Experience[]>>;
 };
 
-function EducationForm({ data, setEducations }: Props) {
+function ExperienceForm({ data, setExperiences }: Props) {
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     const { name, value } = e.target;
 
-    setEducations((prev) =>
+    setExperiences((prev) =>
       prev.map((edu) => (edu.id === data.id ? { ...edu, [name]: value } : edu)),
     );
   }
 
   return (
     <div className="flex flex-col gap-3">
-      <FormInput<Education>
+      <FormInput<Experience>
         type="text"
-        label="School"
-        name="school"
-        placeholder="Harvard University"
-        value={data.school}
+        label="Position"
+        name="position"
+        placeholder="Software Engineer"
+        value={data.position}
         onChange={handleChange}
+        maxLength={30}
       />
 
-      <FormInput<Education>
+      <FormInput<Experience>
         type="text"
-        label="Degree"
-        name="degree"
-        placeholder="Bachelor of Computer Science"
-        value={data.degree}
+        label="Company"
+        name="company"
+        placeholder="ABC Inc."
+        value={data.company}
         onChange={handleChange}
+        maxLength={40}
       />
 
-      <FormInput<Education>
-        type="text"
-        label="Start Date"
-        name="startDate"
-        placeholder="2020"
-        value={data.startDate}
-        onChange={handleChange}
-      />
+      <div className="flex flex-row justify-between gap-4">
+        <FormInput<Experience>
+          type="number"
+          label="Start Date"
+          name="startDate"
+          placeholder="2020"
+          value={data.startDate}
+          onChange={handleChange}
+          className="max-w-38"
+          maxLength={4}
+        />
 
-      <FormInput<Education>
-        type="text"
-        label="End Date"
-        name="endDate"
-        placeholder="2024"
-        value={data.endDate}
-        onChange={handleChange}
-      />
+        <FormInput<Experience>
+          type="number"
+          label="End Date"
+          name="endDate"
+          placeholder="2024"
+          value={data.endDate}
+          onChange={handleChange}
+          className="max-w-38"
+          maxLength={10}
+        />
+      </div>
 
-      <FormInput<Education>
-        type="text"
-        label="Location"
-        name="location"
-        placeholder="Boston, MA"
-        value={data.location}
+      <FormTextArea<Experience>
+        label="Responsibilities"
+        name="resume"
+        placeholder="I build a software application that..."
+        value={data.resume}
         onChange={handleChange}
+        maxLength={430}
+        rows={6}
       />
     </div>
   );
 }
 
-export default EducationForm;
+export default ExperienceForm;

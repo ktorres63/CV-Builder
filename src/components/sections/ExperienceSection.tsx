@@ -1,26 +1,27 @@
 import type { Experience } from "../../types/cv";
-
 import Card from "../ui/Card";
-import EducationCard from "../ui/EducationCard";
+import EditableItemCard from "../ui/EditableItemCard";
+import ExperienceForm from "../forms/ExperienceForm";
+
 type Props = {
-  educations: Education[];
-  setEducations: React.Dispatch<React.SetStateAction<Education[]>>;
+  experiences: Experience[];
+  setExperiences: React.Dispatch<React.SetStateAction<Experience[]>>;
 };
-function EducationSection({ educations, setEducations }: Props) {
+function ExperienceSection({ experiences, setExperiences }: Props) {
   function handleAdd() {
-    const newEducation: Education = {
+    const newExperience: Experience = {
       id: crypto.randomUUID(),
-      school: "",
-      degree: "",
+      company: "",
+      position: "",
       startDate: "",
       endDate: "",
-      location: "",
+      resume: "",
     };
-    setEducations((prev) => [...prev, newEducation]);
+    setExperiences((prev) => [...prev, newExperience]);
   }
   return (
     <Card
-      title="Education"
+      title="Experience"
       headerAction={
         <button
           onClick={handleAdd}
@@ -30,19 +31,24 @@ function EducationSection({ educations, setEducations }: Props) {
         </button>
       }
     >
-      {educations.length === 0 && (
-        <p className="text-sm text-gray-500">No education added yet.</p>
+      {experiences.length === 0 && (
+        <p className="text-sm text-gray-500  mb-3">No experience added yet.</p>
       )}
 
-      {educations.map((edu, index) => (
-        <EducationCard
-          key={edu.id}
-          education={edu}
-          index={index}
-          setEducations={setEducations}
-        />
+      {experiences.map((exp) => (
+        <EditableItemCard
+          key={exp.id}
+          id={exp.id}
+          title={exp.position}
+          subtitle={exp.company}
+          onDelete={(id) =>
+            setExperiences((prev) => prev.filter((e) => e.id !== id))
+          }
+        >
+          <ExperienceForm data={exp} setExperiences={setExperiences} />
+        </EditableItemCard>
       ))}
     </Card>
   );
 }
-export default EducationSection;
+export default ExperienceSection;

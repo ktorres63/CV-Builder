@@ -18,7 +18,7 @@ export type Experience = {
   id: string;
   company: string;
   position: string;
-  responsibilities: string[];
-  from: string;
-  to: string;
+  startDate: string;
+  endDate: string;
+  resume: string;
 };

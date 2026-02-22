@@ -18,7 +18,7 @@ function GeneralInfoSection({ data, setData }: Props) {
   return (
     <div className="rounded-lg shadow">
       <div className="flex flex-col gap-4">
-        <Card title="General Information">
+        <Card title="General Information" defaultOpen={false}>
           <FormInput<GeneralInfo>
             type="text"
             label="Full Name"

@@ -1,7 +1,9 @@
 import type { Education } from "../../types/cv";
 
 import Card from "../ui/Card";
-import EducationCard from "../ui/EducationCard";
+import EditableItemCard from "../ui/EditableItemCard";
+import EducationForm from "../forms/EducationForm";
+
 type Props = {
   educations: Education[];
   setEducations: React.Dispatch<React.SetStateAction<Education[]>>;
@@ -20,6 +22,7 @@ function EducationSection({ educations, setEducations }: Props) {
   }
   return (
     <Card
+      defaultOpen={false}
       title="Education"
       headerAction={
         <button
@@ -31,16 +34,21 @@ function EducationSection({ educations, setEducations }: Props) {
       }
     >
       {educations.length === 0 && (
-        <p className="text-sm text-gray-500">No education added yet.</p>
+        <p className="text-sm text-gray-500 mb-3">No education added yet.</p>
       )}
 
-      {educations.map((edu, index) => (
-        <EducationCard
+      {educations.map((edu) => (
+        <EditableItemCard
           key={edu.id}
-          education={edu}
-          index={index}
-          setEducations={setEducations}
-        />
+          id={edu.id}
+          title={edu.school}
+          subtitle={edu.location}
+          onDelete={(id) =>
+            setEducations((prev) => prev.filter((e) => e.id !== id))
+          }
+        >
+          <EducationForm data={edu} setEducations={setEducations} />
+        </EditableItemCard>
       ))}
     </Card>
   );
