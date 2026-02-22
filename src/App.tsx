@@ -4,7 +4,7 @@ import GeneralInfoSection from "./components/sections/GeneralInfoSection.tsx";
 import EducationSection from "./components/sections/EducationSection.tsx";
 import CvPreview from "./components/pdf/CVPreview.tsx";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import CvDocument from "./components/pdf/cvDocument.tsx";
+import CvDocument from "./components/pdf/CvDocument.tsx";
 import ExperienceSection from "./components/sections/ExperienceSection.tsx";
 
 function App() {
