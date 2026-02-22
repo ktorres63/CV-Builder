@@ -1,4 +1,6 @@
 import { useState } from "react";
+import EditIcon from "../icons/EditIcon";
+import DeleteIcon from "../icons/DeleteIcon";
 
 type EditableItemCardProps = {
   id: string;
@@ -31,14 +33,14 @@ function EditableItemCard({
               onClick={() => setIsEditing(true)}
               className="border px-2 py-1 rounded text-sm"
             >
-              Edit
+              <EditIcon className="w-5 h-5" />{" "}
             </button>
 
             <button
               onClick={() => onDelete(id)}
               className="border px-2 py-1 rounded text-sm"
             >
-              Delete
+              <DeleteIcon className="w-5 h-5" />{" "}
             </button>
           </div>
         </div>

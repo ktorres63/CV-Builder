@@ -35,7 +35,26 @@ function App() {
     },
   ]);
 
-  const [experiences, setExperiences] = useState<Experience[]>([]);
+  const [experiences, setExperiences] = useState<Experience[]>([
+    {
+      id: "99",
+      company: "Apple ABC",
+      position: "Software Engineer",
+      startDate: "2019",
+      endDate: "2029",
+      resume:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptas deserunt inventore illum iste exercitationem nostrum, autem dolorem cupiditate qui ullam ex hic ab mollitia eveniet ad reprehenderit eaque quod?",
+    },
+    {
+      id: "929",
+      company: "University of Example",
+      position: "Bachelor of Science",
+      startDate: "2000",
+      endDate: "2019",
+      resume:
+        "orem ipsum dolor sit amet consectetur adipisicing elit. Est voluptas deserunt inventore illum iste exercitationem nostrum, autem dolorem cupiditate qui ullam ex hic ab mollitia eveniet ad reprehenderit eaque quod?Perspiciatis placeat ullam odit enim exercitationem venia",
+    },
+  ]);
 
   return (
     <div className="font-sans min-h-screen bg-apricot-cream-200 p-8 flex flex-col">

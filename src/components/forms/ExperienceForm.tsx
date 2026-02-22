@@ -42,7 +42,7 @@ function ExperienceForm({ data, setExperiences }: Props) {
 
       <div className="flex flex-row justify-between gap-4">
         <FormInput<Experience>
-          type="number"
+          type="string"
           label="Start Date"
           name="startDate"
           placeholder="2020"
@@ -53,7 +53,7 @@ function ExperienceForm({ data, setExperiences }: Props) {
         />
 
         <FormInput<Experience>
-          type="number"
+          type="string"
           label="End Date"
           name="endDate"
           placeholder="2024"
