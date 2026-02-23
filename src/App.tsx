@@ -41,18 +41,18 @@ function App() {
       company: "Apple ABC",
       position: "Software Engineer",
       startDate: "2019",
-      endDate: "2029",
+      endDate: "2023",
       resume:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptas deserunt inventore illum iste exercitationem nostrum, autem dolorem cupiditate qui ullam ex hic ab mollitia eveniet ad reprehenderit eaque quod?",
     },
     {
       id: "929",
-      company: "University of Example",
-      position: "Bachelor of Science",
-      startDate: "2000",
-      endDate: "2019",
+      company: "Amazing Inc",
+      position: "Software Engineer",
+      startDate: "2024",
+      endDate: "present",
       resume:
-        "orem ipsum dolor sit amet consectetur adipisicing elit. Est voluptas deserunt inventore illum iste exercitationem nostrum, autem dolorem cupiditate qui ullam ex hic ab mollitia eveniet ad reprehenderit eaque quod?Perspiciatis placeat ullam odit enim exercitationem venia",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptas deserunt inventore illum iste exercitationem nostrum, autem dolorem cupiditate qui ullam ex hic ab mollitia eveniet ad reprehenderit eaque quod?",
     },
   ]);
 
